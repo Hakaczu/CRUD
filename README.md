@@ -1,2 +1,2 @@
-# GRUB-by-Sisa
-My firtst CRUD project
+# Pharmacy CRUD (Create Read Update Delete) Project
+My firtst CRUD. It's simple project. 
