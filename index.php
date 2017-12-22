@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
 
-	<title>Pharmacy Warehouse</title>
+	<title>Pharmacy</title>
 
 	<!--  -->
 
@@ -42,12 +42,12 @@
 		<div class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar-content">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar-content">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Pharmacy Warehouse - Simple CRUD</a>
+					<a class="navbar-brand" href="#">Pharmacy - Simple CRUD</a>
 				</div>
 				<div class="collapse navbar-collapse" id="mynavbar-content">
 					<ul class="nav navbar-nav">
