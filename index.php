@@ -61,6 +61,15 @@
 				</div>
 			</div>
 		</div>
+		<form action="#">
+			<div class="form-group">
+					<input class="form-control" id="name" type="text" placeholder="Name" required>
+			</div>
+			<div class="form-group">
+					<input class="form-control" id="qua" type="number" placeholder="Quantity" required>
+			</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+		</form>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
