@@ -41,14 +41,14 @@
 				</div>
 			</div>
 		</div>
-		<form action="#">
+		<form action="post_view.php" method="post">
 			<div class="form-group">
-					<input class="form-control" id="name" type="text" placeholder="Name" required>
+					<input class="form-control" id="name" name="name" type="text" placeholder="Name" required>
 			</div>
 			<div class="form-group">
-					<input class="form-control" id="qua" type="number" placeholder="Quantity" required>
+					<input class="form-control" id="quantity" name="quantity" type="number" placeholder="Quantity" required>
 			</div>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default" value="Submit">Submit</button>
 		</form>
 	</div>
 

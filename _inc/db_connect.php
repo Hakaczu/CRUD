@@ -9,12 +9,12 @@ class db_connect {
 
     public function __construct() {
         $this ->_connection = new PDO("$this->_sqll:host=$this->_host;dbname=$this->_database",$this->_username,$this->_password);
-
+        $this->_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         if($this->_connection) {
             console_logs::display("MySQL: Connect Successful");
         }
         else {
-            echo("<script>console.log('MySQL: Connect Error');</script>");
+            console_logs::display("MySQL: Connect Successful");
         }
     }
 }
