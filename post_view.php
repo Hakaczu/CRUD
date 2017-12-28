@@ -8,6 +8,8 @@
 //echo '<pre>';
 //print_r($_POST);
 //echo '</pre>';
-include '_inc/db_operations.php';
+include '_db/db_operations.php';
+include '_view/console_logs.php';
+include '_view/print_data.php';
 $add = new db_operations;
-$add ->add('pharmacy');
+$add ->read("pharmacy");
