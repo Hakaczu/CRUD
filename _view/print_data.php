@@ -37,7 +37,6 @@ class print_data{
         "</tbody>
         </table>";
 
-
     }
 
 }

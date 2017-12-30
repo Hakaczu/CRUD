@@ -7,6 +7,8 @@
  */
  class console_logs {
    static function display($txt){
+       echo "\n\t";
        echo '<script>console.log("'.$txt.'")</script>';
+       echo "\n";
    }
 }
