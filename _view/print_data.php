@@ -22,6 +22,9 @@ class print_data{
             case 'delete':
                 $w = self::alert_message('Record Deleted', 'danger');
                 break;
+            case 'nexist':
+                $w = self::alert_message('Record Does Not Exist', 'danger');
+                break;
             default:
                 $w ='';
                 break;
@@ -59,8 +62,8 @@ class print_data{
                 $w .= '<td>'.$data[$row][$column].'</td>';
 
             }
-            $w .= '<td><a href="index.php?action=edit&id='.$data[$row]['id'].'">Edit</a> 
-            | <a href="index.php?action=delete&id='.$data[$row]['id'].'&table='.$table.'" class="del">Delete</a></td>';
+            $w .= '<td><a href="index.php?action=edit&id='.$data[$row]['id'].'&table='.$table.'">Edit</a> 
+            | <a href="#myModal" data-toggle="modal">Delete</a></td>';
             $w .= '</tr>';
         }
         $w .=

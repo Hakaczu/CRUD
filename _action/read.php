@@ -9,3 +9,4 @@
 $read = new db_operations();
 $view=$read->read('pharmacy');
 echo $view;
+include '_layout/modal.html';

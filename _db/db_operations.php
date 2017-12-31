@@ -38,7 +38,12 @@ class db_operations extends db_connect {
         $query = $this->_connection->prepare("SELECT * FROM ".$table." WHERE id=".$id);
         $query->execute();
         $result = $query->fetch(PDO::FETCH_ASSOC);
-        return $result;
+        if(isset($result)){
+            return $result;
+        }else{
+            return $id;
+        }
+
 
     }
 
