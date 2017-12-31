@@ -6,5 +6,6 @@
  * Time: 23:07
  */
 
-$view = new db_operations();
-$view->read('pharmacy');
+$read = new db_operations();
+$view=$read->read('pharmacy');
+echo $view;

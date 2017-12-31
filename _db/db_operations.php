@@ -34,29 +34,39 @@ class db_operations extends db_connect {
         return $set;
     }
 
-    public function add ($table, $data){
-        echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+    public function get_record ($table, $id){
+        $query = $this->_connection->prepare("SELECT * FROM ".$table." WHERE id=".$id);
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
+
+
+    public function create ($table, $data){
+
         $query = $this->_connection->prepare("INSERT INTO ".$this->$table.$this->prepare_set($this->$table));
-        $insert = $query -> execute($data);
-        if($insert)
-        {
-            console_logs::display("PDO: Insert Success");
-        }else{
-            console_logs::display("PDO: Insert Failed");
-        }
+        $query -> execute($data);
     }
 
     public function read ($table){
+
         $query = $this->_connection->prepare("SELECT * FROM ".$this->$table.";");
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
-        if (count($result)>0){
-            console_logs::display("Found: ".count($result)." row(s) in ".$this->$table." table");
-        }else
-            console_logs::display("Not Found Rows in ".$this->$table." table");
-        print_data::print_table($this->get_columns($this->$table),$result);
+
+        $result=print_data::print_table($this->$table,$this->get_columns($this->$table),$result);
+        return $result;
+    }
+
+    public function update ($table,$id,$data){
+        $query = $this->_connection->prepare("UPDATE ".$this->$table.$this->prepare_set($this->$table)." WHERE id=".$id);
+        $query->execute($data);
+    }
+
+    public function delete ($table, $id){
+        $query = $this->_connection->prepare("DELETE FROM ".$this->$table." WHERE id=".$id);
+        $query->execute();
     }
 }
 

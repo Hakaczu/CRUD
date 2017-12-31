@@ -6,37 +6,67 @@
  * Time: 16:44
  */
 class print_data{
+    public static function alert_message($txt,$type){
+        $w = '<div class="alert alert-' . $type . ' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' . $txt . '</div>';
+        return $w;
+    }
 
-    public static function print_table($columns, $data){
-        echo
-        "<table class=\"table table-bordered\">
-         <thead>
-         <tr>";
+    public static function alert($notice){
+        switch($notice) {
+            case 'create':
+                $w = self::alert_message('Record Added','success');
+                break;
+            case 'update':
+                $w = self::alert_message('Record Edited', 'warning');
+                break;
+            case 'delete':
+                $w = self::alert_message('Record Deleted', 'danger');
+                break;
+            default:
+                $w ='';
+                break;
+        }
+        return $w;
+    }
 
-        for($i = 0; $i<count($columns); $i++){
-            echo "<th>".$columns[$i]."</th>";
+    public static function print_table($table, $columns, $data){
+        if(isset($_GET['notice'])){
+            $w=self::alert($_GET['notice']);
+        }else{
+            $w='';
         }
 
-        echo
-        "</tr>
+        $w .= '<h1>'.$table.'</h1>';
+        $w .=
+        '<table class="table table-hover table-striped table-bordered">
+         <thead>
+         <tr>';
+
+        for($i = 0; $i<count($columns); $i++){
+            $w .= '<th>'.$columns[$i].'</th>';
+        }
+        $w .= '<th>actions</th>';
+        $w .=
+        '</tr>
         </thead>
-        <tbody>\n";
+        <tbody>';
 
         for ($row = 0; $row<count($data); $row++)
         {
-            echo "<tr>";
+            $w .= "<tr>";
             foreach ($columns as $column)
             {
-                echo "\n\t<td>".$data[$row][$column]."</td>\n";
+                $w .= '<td>'.$data[$row][$column].'</td>';
 
             }
-
-            echo "</tr>\n";
+            $w .= '<td><a href="index.php?action=edit&id='.$data[$row]['id'].'">Edit</a> 
+            | <a href="index.php?action=delete&id='.$data[$row]['id'].'&table='.$table.'" class="del">Delete</a></td>';
+            $w .= '</tr>';
         }
-        echo
-        "</tbody>
-        </table>";
-
+        $w .=
+        '</tbody>
+        </table>';
+        return $w;
     }
 
 }

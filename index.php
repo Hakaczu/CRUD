@@ -1,23 +1,30 @@
 <?php
-require_once "_view/console_logs.php";
-require_once "_view/print_data.php";
-require_once "_db/db_operations.php";
+require_once '_view/console_logs.php';
+require_once '_view/print_data.php';
+require_once '_db/db_operations.php';
 ?>
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <?php
-include "_layout/head.php";
+include '_layout/head.html';
 ?>
 <body>
-
-	<div class="container">
         <?php
-        include "_layout/menu.php";
-        include "_action/route.php";
+        include '_layout/menu.html';
         ?>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <?php
+                include '_action/route.php';
+                ?>
+            </div>
+
+        </div>
+    </div>
     <?php
-    include "_layout/scripts.php";
+    include '_layout/footer.html';
+    include '_layout/scripts.html';
     ?>
 </body>
 

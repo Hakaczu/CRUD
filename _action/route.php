@@ -6,21 +6,27 @@
  * Time: 22:28
  */
 
+if ($_SERVER["SCRIPT_FILENAME"]==str_replace('\\','/',__FILE__)) exit;
 if(!empty($_GET)){
 
     switch ($_GET['action']){
         case "add":
-            include "_layout/form_pharmacy.php";
+            include "_layout/create_form.html";
             break;
         case "view":
-            include "_action/view.php";
+            include "_action/read.php";
             break;
-
-
+        case "edit":
+            include '_layout/update_form.php';
+            break;
+        case 'delete':
+            include '_action/delete.php';
+            break;
         default:
             echo "<h2 class='text-center'>Page Not Found Sorry</h2><br/><a href='index.php'><h4 class=\"text-center\">Home Page</h4></a>";
+            break;
     }
 }else{
-    include "_layout/buttons.php";
+    include "_layout/home.html";
 }
 
