@@ -63,7 +63,7 @@ class print_data{
 
             }
             $w .= '<td><a href="index.php?action=edit&id='.$data[$row]['id'].'&table='.$table.'">Edit</a> 
-            | <a href="#myModal" data-toggle="modal">Delete</a></td>';
+            | <a href="#" data-toggle="modal" data-target="#del" data-href="index.php?action=delete&id='.$data[$row]['id'].'&table='.$table.'">Delete</a></td>';
             $w .= '</tr>';
         }
         $w .=

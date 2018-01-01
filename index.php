@@ -19,12 +19,11 @@ include '_layout/head.html';
                 include '_action/route.php';
                 ?>
             </div>
-
         </div>
     </div>
     <?php
     include '_layout/footer.html';
-    include '_layout/scripts.html';
+    include '_layout/scripts.js';
     ?>
 </body>
 
